@@ -35,7 +35,7 @@
     "verify": "strapi-plugin verify",
     "test:ts:front": "run -T tsc -p admin/tsconfig.json",
     "test:ts:back": "run -T tsc -p server/tsconfig.json",
-    "prepare": "npm install && npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@strapi/design-system": "^2.0.0-rc.24",
