@@ -1,10 +1,21 @@
 import type { Core } from '@strapi/strapi';
-import fetch from 'node-fetch';
 import sharp from 'sharp';
 import { encode } from 'blurhash';
 
+// Variable pour stocker la fonction fetch importée une fois
+let fetchFn: typeof fetch | null = null;
+
+// Fonction pour récupérer fetch, import dynamique
+async function getFetch() {
+  if (!fetchFn) {
+    const mod = await import('node-fetch');
+    fetchFn = mod.default as unknown as typeof fetch;
+  }
+  return fetchFn;
+}
+
 const getBlurhash = async (imageUrl: string): Promise<string> => {
-  // Récupérer l'image en buffer
+  const fetch = await getFetch(); // récupère fetch dynamiquement
   const response = await fetch(imageUrl);
   if (!response.ok) {
     throw new Error(`Erreur téléchargement image : ${response.statusText}`);
@@ -12,14 +23,12 @@ const getBlurhash = async (imageUrl: string): Promise<string> => {
   const arrayBuffer = await response.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
 
-  // Redimensionner image et extraire pixels RGBA
   const { data, info } = await sharp(buffer)
     .raw()
     .ensureAlpha()
     .resize(32, 32, { fit: 'inside' })
     .toBuffer({ resolveWithObject: true });
 
-  // Encoder le blurhash (4x4 composants)
   const blurhash = encode(new Uint8ClampedArray(data), info.width, info.height, 4, 4);
   return blurhash;
 };
@@ -54,7 +63,7 @@ const updateMissingBlurhashes = async () => {
   console.log('✔️ Mise à jour des blurhash terminée.');
 };
 
-const bootstrap = async({ strapi }: { strapi: Core.Strapi }) => {
+const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
   strapi.db.lifecycles.subscribe({
     models: ['plugin::upload.file'],
     async afterCreate(event) {
@@ -68,7 +77,7 @@ const bootstrap = async({ strapi }: { strapi: Core.Strapi }) => {
           console.log('🔹 Blurhash calculé:', blurhash);
 
           await strapi.entityService.update('plugin::upload.file', result.id, {
-            data: { blurhash: blurhash } as any,
+            data: { blurhash } as any,
           });
 
           console.log('✅ Blurhash sauvegardé dans caption');
