@@ -34,13 +34,13 @@
     "watch:link": "strapi-plugin watch:link",
     "verify": "strapi-plugin verify",
     "test:ts:front": "run -T tsc -p admin/tsconfig.json",
-    "test:ts:back": "run -T tsc -p server/tsconfig.json",
-    "prepare": "npm install && npm run build"
+    "test:ts:back": "run -T tsc -p server/tsconfig.json"
   },
   "dependencies": {
     "@strapi/design-system": "^2.0.0-rc.24",
     "@strapi/icons": "^2.0.0-rc.24",
     "blurhash": "^2.0.5",
+    "node-fetch": "^3.3.2",
     "react-intl": "^7.1.11",
     "sharp": "^0.34.2"
   },
