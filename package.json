@@ -20,7 +20,13 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js",
+    "package.json",
+    "README.md"
   ],
   "scripts": {
     "build": "strapi-plugin build",
