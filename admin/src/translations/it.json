@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Banner",
+  "blur-placeholder.home.table.row.name": "Nome",
+  "blur-placeholder.home.table.row.provider": "Fornitore",
+  "blur-placeholder.home.table.row.type": "Tipo",
+  "blur-placeholder.home.table.row.link": "Link",
+  "blur-placeholder.home.table.row.input": "Inserisci un blurhash",
+
+  "blur-placeholder.home.table.row.action": "Azioni",
+  "blur-placeholder.home.table.row.action.delete": "Elimina",
+  "blur-placeholder.home.table.row.action.validate": "Convalida",
+  "blur-placeholder.home.table.row.action.generate": "Genera",
+  "blur-placeholder.home.table.row.action.watch": "Visualizza",
+  "blur-placeholder.home.table.row.action.main.wrong": "Formato errato",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Rimuovi hash",
+  "blur-placeholder.home.table.row.action.main.generate": "Genera un hash",
+
+  "blur-placeholder.home.table.pagination.previous": "Vai alla pagina precedente",
+  "blur-placeholder.home.table.pagination.select": "Vai alla pagina",
+  "blur-placeholder.home.table.pagination.next": "Vai alla pagina successiva",
+
+  "blur-placeholder.home.modal.title": "Anteprima generazione",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Nome",
+  "blur-placeholder.home.modal.media.mime": "Estensione",
+  "blur-placeholder.home.modal.media.weight": "Peso",
+  "blur-placeholder.home.modal.media.size": "Dimensione",
+  "blur-placeholder.home.modal.media.date": "Data",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Chiudi",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Errore durante il recupero dei file",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "File non trovato.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "La rigenerazione del blurhash è disabilitata per questo tipo di fornitore:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Errore durante la rigenerazione:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Errore durante la rigenerazione del blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash rigenerato con successo!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Errore di recupero:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Errore di rete durante la rigenerazione del blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Errore durante la cancellazione del blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash cancellato con successo!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Errore di rete durante la cancellazione del blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Errore durante l'aggiornamento del blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Errore di rete durante l'aggiornamento del blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash aggiornato con successo!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Errore durante il download dell'immagine:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "File locale non trovato:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Fornitore non supportato:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Inizio aggiornamento dei blurhash mancanti...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "I media recuperati non sono un array:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Calcolo del blurhash per il media id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Blurhash aggiunto per id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Errore blurhash per il media id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Aggiornamento dei blurhash completato.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Nuovo media importato:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash calcolato:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash salvato",
+  "blur-placeholder.boostrap.page.blurhash.error": "Errore durante il calcolo del blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "Il file importato non è un'immagine, nessun blurhash calcolato.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Errore durante il download dell'immagine:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "File locale non trovato:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Fornitore non supportato:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "File non trovato",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Il file non è un'immagine",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Errore blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Errore durante il calcolo del blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "File non trovato",
+  "blur-placeholder.controller.function.clear.delete.error": "Errore durante la cancellazione del blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Il blurhash deve essere una stringa non vuota.",
+  "blur-placeholder.controller.function.setHash.file.error": "File non trovato",
+  "blur-placeholder.controller.function.setHash.image.error": "Il file non è un'immagine",
+  "blur-placeholder.controller.function.setHash.maj.error": "Errore durante l'aggiornamento del blurhash"
+}

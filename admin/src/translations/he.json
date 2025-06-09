@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "באנר",
+  "blur-placeholder.home.table.row.name": "שם",
+  "blur-placeholder.home.table.row.provider": "ספק",
+  "blur-placeholder.home.table.row.type": "סוג",
+  "blur-placeholder.home.table.row.link": "קישור",
+  "blur-placeholder.home.table.row.input": "הזן blurhash",
+
+  "blur-placeholder.home.table.row.action": "פעולות",
+  "blur-placeholder.home.table.row.action.delete": "מחק",
+  "blur-placeholder.home.table.row.action.validate": "אשר",
+  "blur-placeholder.home.table.row.action.generate": "צור",
+  "blur-placeholder.home.table.row.action.watch": "הצג",
+  "blur-placeholder.home.table.row.action.main.wrong": "פורמט שגוי",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "הסר את ההאש",
+  "blur-placeholder.home.table.row.action.main.generate": "צור האש",
+
+  "blur-placeholder.home.table.pagination.previous": "עבור לעמוד הקודם",
+  "blur-placeholder.home.table.pagination.select": "עבור לעמוד",
+  "blur-placeholder.home.table.pagination.next": "עבור לעמוד הבא",
+
+  "blur-placeholder.home.modal.title": "תצוגה מקדימה של יצירה",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "שם",
+  "blur-placeholder.home.modal.media.mime": "סיומת",
+  "blur-placeholder.home.modal.media.weight": "משקל",
+  "blur-placeholder.home.modal.media.size": "גודל",
+  "blur-placeholder.home.modal.media.date": "תאריך",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "סגור",
+
+  "blur-placeholder.home.function.fetchFiles.error": "שגיאה בהבאת הקבצים",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "קובץ לא נמצא.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "יצירת ה-blurhash מחדש מושבתת עבור סוג ספק זה:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "שגיאה ביצירת ה-blurhash מחדש:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "שגיאה ביצירת ה-blurhash מחדש",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash נוצר מחדש בהצלחה!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "שגיאה בהבאה:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "שגיאת רשת בעת יצירת ה-blurhash מחדש",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "שגיאה במחיקת ה-blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash נמחק בהצלחה!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "שגיאת רשת בעת מחיקת ה-blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "שגיאה בעדכון ה-blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "שגיאת רשת בעת עדכון ה-blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash עודכן בהצלחה!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "שגיאה בהורדת התמונה:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "קובץ מקומי לא נמצא:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "ספק לא נתמך:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "מתחילים לעדכן blurhashes חסרים...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "המדיה שהוחזרה אינה מערך:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 מחשבים blurhash למדיה id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ blurhash נוסף עבור id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ שגיאה ב-blurhash עבור המדיה id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ עדכון ה-blurhashes הושלם.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 מדיה חדשה יובאה:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 blurhash חושב:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ blurhash נשמר",
+  "blur-placeholder.boostrap.page.blurhash.error": "שגיאה בחישוב ה-blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "הקובץ שיובא אינו תמונה, לא חושב blurhash.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "שגיאה בהורדת התמונה:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "קובץ מקומי לא נמצא:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "ספק לא נתמך:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "קובץ לא נמצא",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "הקובץ אינו תמונה",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "שגיאת blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "שגיאה בחישוב ה-blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "קובץ לא נמצא",
+  "blur-placeholder.controller.function.clear.delete.error": "שגיאה במחיקת ה-blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "ה-blurhash חייב להיות מחרוזת לא ריקה.",
+  "blur-placeholder.controller.function.setHash.file.error": "קובץ לא נמצא",
+  "blur-placeholder.controller.function.setHash.image.error": "הקובץ אינו תמונה",
+  "blur-placeholder.controller.function.setHash.maj.error": "שגיאה בעדכון ה-blurhash"
+}

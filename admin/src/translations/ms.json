@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Sepanduk",
+  "blur-placeholder.home.table.row.name": "Nama",
+  "blur-placeholder.home.table.row.provider": "Pembekal",
+  "blur-placeholder.home.table.row.type": "Jenis",
+  "blur-placeholder.home.table.row.link": "Pautan",
+  "blur-placeholder.home.table.row.input": "Masukkan blurhash",
+
+  "blur-placeholder.home.table.row.action": "Tindakan",
+  "blur-placeholder.home.table.row.action.delete": "Padam",
+  "blur-placeholder.home.table.row.action.validate": "Sahkan",
+  "blur-placeholder.home.table.row.action.generate": "Jana",
+  "blur-placeholder.home.table.row.action.watch": "Lihat",
+  "blur-placeholder.home.table.row.action.main.wrong": "Format tidak betul",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Padam hash",
+  "blur-placeholder.home.table.row.action.main.generate": "Jana hash",
+
+  "blur-placeholder.home.table.pagination.previous": "Pergi ke halaman sebelumnya",
+  "blur-placeholder.home.table.pagination.select": "Pergi ke halaman",
+  "blur-placeholder.home.table.pagination.next": "Pergi ke halaman seterusnya",
+
+  "blur-placeholder.home.modal.title": "Pratonton penjanaan",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Nama",
+  "blur-placeholder.home.modal.media.mime": "Sambungan",
+  "blur-placeholder.home.modal.media.weight": "Berat",
+  "blur-placeholder.home.modal.media.size": "Saiz",
+  "blur-placeholder.home.modal.media.date": "Tarikh",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Tutup",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Ralat semasa mendapatkan fail",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Fail tidak ditemui.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "Penjanaan semula blurhash dimatikan untuk jenis pembekal ini:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Ralat semasa penjanaan semula:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Ralat semasa penjanaan semula blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash berjaya dijana semula!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Ralat semasa mendapatkan:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Ralat rangkaian semasa penjanaan semula blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Ralat semasa memadam blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash berjaya dipadam!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Ralat rangkaian semasa memadam blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Ralat semasa mengemas kini blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Ralat rangkaian semasa mengemas kini blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash berjaya dikemas kini!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Ralat semasa memuat turun imej:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Fail tempatan tidak ditemui:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Pembekal tidak disokong:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Memulakan kemas kini blurhash yang hilang...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "Media yang diperoleh bukan senarai:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Mengira blurhash untuk media id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Blurhash ditambah untuk id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Ralat blurhash untuk media id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Kemas kini blurhash selesai.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Media baru diimport:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash dikira:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash disimpan",
+  "blur-placeholder.boostrap.page.blurhash.error": "Ralat semasa mengira blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "Fail yang diimport bukan imej, tiada blurhash dikira.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Ralat semasa memuat turun imej:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Fail tempatan tidak ditemui:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Pembekal tidak disokong:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Fail tidak ditemui",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Fail bukan imej",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Ralat blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Ralat semasa mengira blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "Fail tidak ditemui",
+  "blur-placeholder.controller.function.clear.delete.error": "Ralat semasa memadam blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Blurhash mesti berupa rentetan tidak kosong.",
+  "blur-placeholder.controller.function.setHash.file.error": "Fail tidak ditemui",
+  "blur-placeholder.controller.function.setHash.image.error": "Fail bukan imej",
+  "blur-placeholder.controller.function.setHash.maj.error": "Ralat semasa mengemas kini blurhash"
+}

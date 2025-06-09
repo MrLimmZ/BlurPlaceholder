@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Баннер",
+  "blur-placeholder.home.table.row.name": "Имя",
+  "blur-placeholder.home.table.row.provider": "Поставщик",
+  "blur-placeholder.home.table.row.type": "Тип",
+  "blur-placeholder.home.table.row.link": "Ссылка",
+  "blur-placeholder.home.table.row.input": "Введите blurhash",
+
+  "blur-placeholder.home.table.row.action": "Действия",
+  "blur-placeholder.home.table.row.action.delete": "Удалить",
+  "blur-placeholder.home.table.row.action.validate": "Подтвердить",
+  "blur-placeholder.home.table.row.action.generate": "Создать",
+  "blur-placeholder.home.table.row.action.watch": "Просмотреть",
+  "blur-placeholder.home.table.row.action.main.wrong": "Неверный формат",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Удалить хеш",
+  "blur-placeholder.home.table.row.action.main.generate": "Создать хеш",
+
+  "blur-placeholder.home.table.pagination.previous": "Перейти на предыдущую страницу",
+  "blur-placeholder.home.table.pagination.select": "Перейти на страницу",
+  "blur-placeholder.home.table.pagination.next": "Перейти на следующую страницу",
+
+  "blur-placeholder.home.modal.title": "Предпросмотр генерации",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Имя",
+  "blur-placeholder.home.modal.media.mime": "Расширение",
+  "blur-placeholder.home.modal.media.weight": "Вес",
+  "blur-placeholder.home.modal.media.size": "Размер",
+  "blur-placeholder.home.modal.media.date": "Дата",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Закрыть",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Ошибка при получении файлов",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Файл не найден.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "Перегенерация blurhash отключена для этого типа поставщика:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Ошибка при перегенерации:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Ошибка при перегенерации blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash успешно перегенерирован!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Ошибка при получении:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Сетевая ошибка при перегенерации blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Ошибка при удалении blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash успешно удалён!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Сетевая ошибка при удалении blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Ошибка при обновлении blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Сетевая ошибка при обновлении blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash успешно обновлён!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Ошибка при загрузке изображения:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Локальный файл не найден:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Поставщик не поддерживается:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Начинается обновление отсутствующих blurhash...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "Полученные медиа не являются массивом:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Вычисление blurhash для медиа id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Добавлен blurhash для id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Ошибка blurhash для медиа id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Обновление blurhash завершено.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Новый импортированный медиафайл:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash вычислен:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash сохранён",
+  "blur-placeholder.boostrap.page.blurhash.error": "Ошибка при вычислении blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "Импортированный файл не является изображением, blurhash не был вычислен.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Ошибка при загрузке изображения:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Локальный файл не найден:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Поставщик не поддерживается:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Файл не найден",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Файл не является изображением",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Ошибка blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Ошибка при вычислении blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "Файл не найден",
+  "blur-placeholder.controller.function.clear.delete.error": "Ошибка при удалении blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Blurhash должен быть непустой строкой.",
+  "blur-placeholder.controller.function.setHash.file.error": "Файл не найден",
+  "blur-placeholder.controller.function.setHash.image.error": "Файл не является изображением",
+  "blur-placeholder.controller.function.setHash.maj.error": "Ошибка при обновлении blurhash"
+}

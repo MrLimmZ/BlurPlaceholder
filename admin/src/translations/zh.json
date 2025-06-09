@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "横幅",
+  "blur-placeholder.home.table.row.name": "名称",
+  "blur-placeholder.home.table.row.provider": "提供者",
+  "blur-placeholder.home.table.row.type": "类型",
+  "blur-placeholder.home.table.row.link": "链接",
+  "blur-placeholder.home.table.row.input": "请输入 blurhash",
+
+  "blur-placeholder.home.table.row.action": "操作",
+  "blur-placeholder.home.table.row.action.delete": "删除",
+  "blur-placeholder.home.table.row.action.validate": "验证",
+  "blur-placeholder.home.table.row.action.generate": "生成",
+  "blur-placeholder.home.table.row.action.watch": "查看",
+  "blur-placeholder.home.table.row.action.main.wrong": "格式错误",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "删除哈希",
+  "blur-placeholder.home.table.row.action.main.generate": "生成哈希",
+
+  "blur-placeholder.home.table.pagination.previous": "前一页",
+  "blur-placeholder.home.table.pagination.select": "跳转至页码",
+  "blur-placeholder.home.table.pagination.next": "下一页",
+
+  "blur-placeholder.home.modal.title": "生成预览",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "名称",
+  "blur-placeholder.home.modal.media.mime": "扩展名",
+  "blur-placeholder.home.modal.media.weight": "权重",
+  "blur-placeholder.home.modal.media.size": "大小",
+  "blur-placeholder.home.modal.media.date": "日期",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "关闭",
+
+  "blur-placeholder.home.function.fetchFiles.error": "获取文件时出错",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "未找到文件。",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "此提供者类型不支持重新生成 blurhash：",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "重新生成时出错：",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "重新生成 blurhash 时出错",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash 重新生成成功！",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "获取时出错：",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "重新生成 blurhash 时网络错误",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "删除 blurhash 时出错",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash 删除成功！",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "删除 blurhash 时网络错误",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "更新 blurhash 时出错",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "更新 blurhash 时网络错误",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash 更新成功！",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "下载图片时出错：",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "未找到本地文件：",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "不支持的提供者：",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "开始更新缺失的 blurhash...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "获取的媒体不是数组：",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 计算媒体 id=${media.id}，url=${media.url} 的 blurhash",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ 已添加 id=${media.id} 的 blurhash",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ 媒体 id=${media.id} url=${media.url} 的 blurhash 出错",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ blurhash 更新完成。",
+
+  "blur-placeholder.boostrap.page.media": "🆕 新媒体已导入：",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 计算的 blurhash：",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ blurhash 已保存",
+  "blur-placeholder.boostrap.page.blurhash.error": "计算 blurhash 时出错：",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "导入的文件不是图片，未计算 blurhash。",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "下载图片时出错：",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "未找到本地文件：",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "不支持的提供者：",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "未找到文件",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "文件不是图片",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "blurhash 出错：",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "计算 blurhash 时出错",
+
+  "blur-placeholder.controller.function.clear.file.error": "未找到文件",
+  "blur-placeholder.controller.function.clear.delete.error": "删除 blurhash 时出错",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "blurhash 必须是非空字符串。",
+  "blur-placeholder.controller.function.setHash.file.error": "未找到文件",
+  "blur-placeholder.controller.function.setHash.image.error": "文件不是图片",
+  "blur-placeholder.controller.function.setHash.maj.error": "更新 blurhash 时出错"
+}

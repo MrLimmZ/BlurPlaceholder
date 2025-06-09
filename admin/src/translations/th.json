@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "แบนเนอร์",
+  "blur-placeholder.home.table.row.name": "ชื่อ",
+  "blur-placeholder.home.table.row.provider": "ผู้ให้บริการ",
+  "blur-placeholder.home.table.row.type": "ประเภท",
+  "blur-placeholder.home.table.row.link": "ลิงก์",
+  "blur-placeholder.home.table.row.input": "กรอก blurhash",
+
+  "blur-placeholder.home.table.row.action": "การดำเนินการ",
+  "blur-placeholder.home.table.row.action.delete": "ลบ",
+  "blur-placeholder.home.table.row.action.validate": "ยืนยัน",
+  "blur-placeholder.home.table.row.action.generate": "สร้าง",
+  "blur-placeholder.home.table.row.action.watch": "ดู",
+  "blur-placeholder.home.table.row.action.main.wrong": "รูปแบบไม่ถูกต้อง",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "ลบแฮช",
+  "blur-placeholder.home.table.row.action.main.generate": "สร้างแฮช",
+
+  "blur-placeholder.home.table.pagination.previous": "ไปยังหน้าก่อนหน้า",
+  "blur-placeholder.home.table.pagination.select": "ไปยังหน้า",
+  "blur-placeholder.home.table.pagination.next": "ไปยังหน้าถัดไป",
+
+  "blur-placeholder.home.modal.title": "ตัวอย่างการสร้าง",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "ชื่อ",
+  "blur-placeholder.home.modal.media.mime": "นามสกุล",
+  "blur-placeholder.home.modal.media.weight": "น้ำหนัก",
+  "blur-placeholder.home.modal.media.size": "ขนาด",
+  "blur-placeholder.home.modal.media.date": "วันที่",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "ปิด",
+
+  "blur-placeholder.home.function.fetchFiles.error": "เกิดข้อผิดพลาดในการดึงไฟล์",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "ไม่พบไฟล์",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "การสร้าง blurhash ใหม่ถูกปิดใช้งานสำหรับผู้ให้บริการประเภทนี้:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "เกิดข้อผิดพลาดในการสร้างใหม่:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "เกิดข้อผิดพลาดในการสร้าง blurhash ใหม่",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "สร้าง blurhash ใหม่สำเร็จ!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "เกิดข้อผิดพลาดในการดึงข้อมูล:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "เกิดข้อผิดพลาดเครือข่ายขณะสร้าง blurhash ใหม่",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "เกิดข้อผิดพลาดในการลบ blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "ลบ blurhash สำเร็จ!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "เกิดข้อผิดพลาดเครือข่ายขณะลบ blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "เกิดข้อผิดพลาดในการอัปเดต blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "เกิดข้อผิดพลาดเครือข่ายขณะอัปเดต blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "อัปเดต blurhash สำเร็จ!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "เกิดข้อผิดพลาดในการดาวน์โหลดภาพ:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "ไม่พบไฟล์ในเครื่อง:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "ผู้ให้บริการไม่รองรับ:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "เริ่มอัปเดต blurhash ที่ขาดหาย...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "สื่อที่ดึงมาไม่ใช่อาร์เรย์:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 กำลังคำนวณ blurhash สำหรับสื่อ id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ เพิ่ม blurhash สำหรับ id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ เกิดข้อผิดพลาด blurhash สำหรับสื่อ id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ การอัปเดต blurhash เสร็จสมบูรณ์",
+
+  "blur-placeholder.boostrap.page.media": "🆕 สื่อใหม่ถูกนำเข้า:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 คำนวณ blurhash แล้ว:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ บันทึก blurhash แล้ว",
+  "blur-placeholder.boostrap.page.blurhash.error": "เกิดข้อผิดพลาดในการคำนวณ blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "ไฟล์ที่นำเข้าไม่ใช่ภาพ ไม่ได้คำนวณ blurhash",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "เกิดข้อผิดพลาดในการดาวน์โหลดภาพ:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "ไม่พบไฟล์ในเครื่อง:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "ผู้ให้บริการไม่รองรับ:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "ไม่พบไฟล์",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "ไฟล์ไม่ใช่ภาพ",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "ข้อผิดพลาด blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "เกิดข้อผิดพลาดในการคำนวณ blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "ไม่พบไฟล์",
+  "blur-placeholder.controller.function.clear.delete.error": "เกิดข้อผิดพลาดในการลบ blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "blurhash ต้องเป็นสตริงที่ไม่ว่างเปล่า",
+  "blur-placeholder.controller.function.setHash.file.error": "ไม่พบไฟล์",
+  "blur-placeholder.controller.function.setHash.image.error": "ไฟล์ไม่ใช่ภาพ",
+  "blur-placeholder.controller.function.setHash.maj.error": "เกิดข้อผิดพลาดในการอัปเดต blurhash"
+}

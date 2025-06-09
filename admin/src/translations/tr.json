@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Afiş",
+  "blur-placeholder.home.table.row.name": "Ad",
+  "blur-placeholder.home.table.row.provider": "Sağlayıcı",
+  "blur-placeholder.home.table.row.type": "Tür",
+  "blur-placeholder.home.table.row.link": "Bağlantı",
+  "blur-placeholder.home.table.row.input": "Bir blurhash girin",
+
+  "blur-placeholder.home.table.row.action": "Eylemler",
+  "blur-placeholder.home.table.row.action.delete": "Sil",
+  "blur-placeholder.home.table.row.action.validate": "Doğrula",
+  "blur-placeholder.home.table.row.action.generate": "Oluştur",
+  "blur-placeholder.home.table.row.action.watch": "Görüntüle",
+  "blur-placeholder.home.table.row.action.main.wrong": "Yanlış format",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Hash'i kaldır",
+  "blur-placeholder.home.table.row.action.main.generate": "Bir hash oluştur",
+
+  "blur-placeholder.home.table.pagination.previous": "Önceki sayfaya git",
+  "blur-placeholder.home.table.pagination.select": "Sayfaya git",
+  "blur-placeholder.home.table.pagination.next": "Sonraki sayfaya git",
+
+  "blur-placeholder.home.modal.title": "Oluşturma önizlemesi",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Ad",
+  "blur-placeholder.home.modal.media.mime": "Uzantı",
+  "blur-placeholder.home.modal.media.weight": "Ağırlık",
+  "blur-placeholder.home.modal.media.size": "Boyut",
+  "blur-placeholder.home.modal.media.date": "Tarih",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Kapat",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Dosyalar alınırken hata oluştu",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Dosya bulunamadı.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "Bu tür sağlayıcı için blurhash yeniden oluşturma devre dışı:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Yeniden oluşturma sırasında hata:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Blurhash yeniden oluşturulurken hata oluştu",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash başarıyla yeniden oluşturuldu!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Alma hatası:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Blurhash yeniden oluşturma sırasında ağ hatası",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Blurhash silinirken hata oluştu",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash başarıyla silindi!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Blurhash silinirken ağ hatası",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Blurhash güncellenirken hata oluştu",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Blurhash güncellenirken ağ hatası",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash başarıyla güncellendi!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Resim indirilirken hata oluştu:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Yerel dosya bulunamadı:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Desteklenmeyen sağlayıcı:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Eksik blurhash güncellemesi başlatıldı...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "Alınan medyalar bir dizi değil:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Medya id=${media.id}, url=${media.url} için blurhash hesaplanıyor",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ id=${media.id} için blurhash eklendi",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Medya id=${media.id} url=${media.url} için blurhash hatası",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Blurhash güncellemesi tamamlandı.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Yeni medya içe aktarıldı:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash hesaplandı:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash kaydedildi",
+  "blur-placeholder.boostrap.page.blurhash.error": "Blurhash hesaplanırken hata oluştu:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "İçe aktarılan dosya bir resim değil, blurhash hesaplanmadı.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Resim indirilirken hata oluştu:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Yerel dosya bulunamadı:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Desteklenmeyen sağlayıcı:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Dosya bulunamadı",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Dosya bir resim değil",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Blurhash hatası:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Blurhash hesaplanırken hata oluştu",
+
+  "blur-placeholder.controller.function.clear.file.error": "Dosya bulunamadı",
+  "blur-placeholder.controller.function.clear.delete.error": "Blurhash silinirken hata oluştu",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Blurhash boş olmayan bir dize olmalıdır.",
+  "blur-placeholder.controller.function.setHash.file.error": "Dosya bulunamadı",
+  "blur-placeholder.controller.function.setHash.image.error": "Dosya bir resim değil",
+  "blur-placeholder.controller.function.setHash.maj.error": "Blurhash güncellenirken hata oluştu"
+}

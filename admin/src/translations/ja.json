@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "バナー",
+  "blur-placeholder.home.table.row.name": "名前",
+  "blur-placeholder.home.table.row.provider": "プロバイダー",
+  "blur-placeholder.home.table.row.type": "タイプ",
+  "blur-placeholder.home.table.row.link": "リンク",
+  "blur-placeholder.home.table.row.input": "blurhashを入力してください",
+
+  "blur-placeholder.home.table.row.action": "アクション",
+  "blur-placeholder.home.table.row.action.delete": "削除",
+  "blur-placeholder.home.table.row.action.validate": "検証",
+  "blur-placeholder.home.table.row.action.generate": "生成",
+  "blur-placeholder.home.table.row.action.watch": "プレビュー",
+  "blur-placeholder.home.table.row.action.main.wrong": "フォーマットが正しくありません",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "ハッシュを削除",
+  "blur-placeholder.home.table.row.action.main.generate": "ハッシュを生成",
+
+  "blur-placeholder.home.table.pagination.previous": "前のページへ",
+  "blur-placeholder.home.table.pagination.select": "ページへ移動",
+  "blur-placeholder.home.table.pagination.next": "次のページへ",
+
+  "blur-placeholder.home.modal.title": "生成プレビュー",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "名前",
+  "blur-placeholder.home.modal.media.mime": "拡張子",
+  "blur-placeholder.home.modal.media.weight": "容量",
+  "blur-placeholder.home.modal.media.size": "サイズ",
+  "blur-placeholder.home.modal.media.date": "日付",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "閉じる",
+
+  "blur-placeholder.home.function.fetchFiles.error": "ファイルの取得中にエラーが発生しました",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "ファイルが見つかりません。",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "このタイプのプロバイダーではblurhashの再生成は無効です：",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "再生成中にエラーが発生しました：",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "blurhashの再生成中にエラーが発生しました",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "blurhashが正常に再生成されました！",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "取得エラー：",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "blurhash再生成中にネットワークエラーが発生しました",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "blurhash削除中にエラーが発生しました",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "blurhashが正常に削除されました！",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "blurhash削除中にネットワークエラーが発生しました",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "blurhash更新中にエラーが発生しました",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "blurhash更新中にネットワークエラーが発生しました",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "blurhashが正常に更新されました！",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "画像のダウンロード中にエラーが発生しました：",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "ローカルファイルが見つかりません：",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "サポートされていないプロバイダー：",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "欠落しているblurhashの更新を開始します...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "取得したメディアは配列ではありません：",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 メディア id=${media.id}, url=${media.url} のblurhashを計算中",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ id=${media.id} のblurhashを追加しました",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ メディア id=${media.id} url=${media.url} のblurhashエラー",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ blurhashの更新が完了しました。",
+
+  "blur-placeholder.boostrap.page.media": "🆕 新しいメディアがインポートされました：",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 blurhashが計算されました：",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ blurhashが保存されました",
+  "blur-placeholder.boostrap.page.blurhash.error": "blurhash計算中にエラーが発生しました：",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "インポートされたファイルは画像ではないため、blurhashは計算されませんでした。",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "画像のダウンロード中にエラーが発生しました：",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "ローカルファイルが見つかりません：",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "サポートされていないプロバイダー：",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "ファイルが見つかりません",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "ファイルは画像ではありません",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "blurhashエラー：",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "blurhash計算中にエラーが発生しました",
+
+  "blur-placeholder.controller.function.clear.file.error": "ファイルが見つかりません",
+  "blur-placeholder.controller.function.clear.delete.error": "blurhash削除中にエラーが発生しました",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "blurhashは空でない文字列である必要があります。",
+  "blur-placeholder.controller.function.setHash.file.error": "ファイルが見つかりません",
+  "blur-placeholder.controller.function.setHash.image.error": "ファイルは画像ではありません",
+  "blur-placeholder.controller.function.setHash.maj.error": "blurhash更新中にエラーが発生しました"
+}

@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Banner",
+  "blur-placeholder.home.table.row.name": "Názov",
+  "blur-placeholder.home.table.row.provider": "Poskytovateľ",
+  "blur-placeholder.home.table.row.type": "Typ",
+  "blur-placeholder.home.table.row.link": "Odkaz",
+  "blur-placeholder.home.table.row.input": "Zadajte blurhash",
+
+  "blur-placeholder.home.table.row.action": "Akcie",
+  "blur-placeholder.home.table.row.action.delete": "Odstrániť",
+  "blur-placeholder.home.table.row.action.validate": "Overiť",
+  "blur-placeholder.home.table.row.action.generate": "Generovať",
+  "blur-placeholder.home.table.row.action.watch": "Zobraziť",
+  "blur-placeholder.home.table.row.action.main.wrong": "Nesprávny formát",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Odstrániť hash",
+  "blur-placeholder.home.table.row.action.main.generate": "Vygenerovať hash",
+
+  "blur-placeholder.home.table.pagination.previous": "Prejsť na predchádzajúcu stránku",
+  "blur-placeholder.home.table.pagination.select": "Prejsť na stránku",
+  "blur-placeholder.home.table.pagination.next": "Prejsť na nasledujúcu stránku",
+
+  "blur-placeholder.home.modal.title": "Náhľad generovania",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Názov",
+  "blur-placeholder.home.modal.media.mime": "Prípona",
+  "blur-placeholder.home.modal.media.weight": "Hmotnosť",
+  "blur-placeholder.home.modal.media.size": "Veľkosť",
+  "blur-placeholder.home.modal.media.date": "Dátum",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Zavrieť",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Chyba pri načítaní súborov",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Súbor nenájdený.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "Regenerácia blurhash je zakázaná pre tento typ poskytovateľa:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Chyba pri regenerácii:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Chyba pri regenerácii blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash bol úspešne regenerovaný!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Chyba pri načítaní:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Sieťová chyba pri regenerácii blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Chyba pri mazaní blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash bol úspešne odstránený!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Sieťová chyba pri mazaní blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Chyba pri aktualizácii blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Sieťová chyba pri aktualizácii blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash bol úspešne aktualizovaný!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Chyba pri sťahovaní obrázka:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Lokálny súbor nenájdený:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Poskytovateľ nie je podporovaný:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Začína aktualizácia chýbajúcich blurhashov...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "Načítané médiá nie sú pole:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Vypočítavam blurhash pre médium id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Pridaný blurhash pre id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Chyba blurhash pre médium id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Aktualizácia blurhashov dokončená.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Nové importované médium:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash vypočítaný:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash uložený",
+  "blur-placeholder.boostrap.page.blurhash.error": "Chyba pri výpočte blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "Importovaný súbor nie je obrázok, žiadny blurhash nebol vypočítaný.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Chyba pri sťahovaní obrázka:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Lokálny súbor nenájdený:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Poskytovateľ nie je podporovaný:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Súbor nenájdený",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Súbor nie je obrázok",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Chyba blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Chyba pri výpočte blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "Súbor nenájdený",
+  "blur-placeholder.controller.function.clear.delete.error": "Chyba pri mazaní blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Blurhash musí byť neprázdny reťazec.",
+  "blur-placeholder.controller.function.setHash.file.error": "Súbor nenájdený",
+  "blur-placeholder.controller.function.setHash.image.error": "Súbor nie je obrázok",
+  "blur-placeholder.controller.function.setHash.maj.error": "Chyba pri aktualizácii blurhash"
+}

@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Banner",
+  "blur-placeholder.home.table.row.name": "Navn",
+  "blur-placeholder.home.table.row.provider": "Udbyder",
+  "blur-placeholder.home.table.row.type": "Type",
+  "blur-placeholder.home.table.row.link": "Link",
+  "blur-placeholder.home.table.row.input": "Indtast et blurhash",
+
+  "blur-placeholder.home.table.row.action": "Handlinger",
+  "blur-placeholder.home.table.row.action.delete": "Slet",
+  "blur-placeholder.home.table.row.action.validate": "Bekræft",
+  "blur-placeholder.home.table.row.action.generate": "Generér",
+  "blur-placeholder.home.table.row.action.watch": "Vis",
+  "blur-placeholder.home.table.row.action.main.wrong": "Forkert format",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Fjern hash",
+  "blur-placeholder.home.table.row.action.main.generate": "Generér hash",
+
+  "blur-placeholder.home.table.pagination.previous": "Gå til forrige side",
+  "blur-placeholder.home.table.pagination.select": "Gå til side",
+  "blur-placeholder.home.table.pagination.next": "Gå til næste side",
+
+  "blur-placeholder.home.modal.title": "Genereringsforhåndsvisning",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Navn",
+  "blur-placeholder.home.modal.media.mime": "Filtype",
+  "blur-placeholder.home.modal.media.weight": "Vægt",
+  "blur-placeholder.home.modal.media.size": "Størrelse",
+  "blur-placeholder.home.modal.media.date": "Dato",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Luk",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Fejl ved hentning af filer",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Fil ikke fundet.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "Genoprettelse af blurhash er deaktiveret for denne udbyder:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Fejl ved genoprettelse:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Fejl ved genoprettelse af blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash genoprettet med succes!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Fejl ved hentning:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Netværksfejl ved genoprettelse af blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Fejl ved sletning af blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash slettet med succes!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Netværksfejl ved sletning af blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Fejl ved opdatering af blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Netværksfejl ved opdatering af blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash opdateret med succes!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Fejl ved download af billede:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Lokal fil ikke fundet:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Udbyder ikke understøttet:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Starter opdatering af manglende blurhashes...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "De hentede medier er ikke en liste:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Beregner blurhash for medie id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Blurhash tilføjet for id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Blurhash fejl for medie id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Opdatering af blurhashes fuldført.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Nyt medie importeret:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash beregnet:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash gemt",
+  "blur-placeholder.boostrap.page.blurhash.error": "Fejl ved beregning af blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "Den importerede fil er ikke et billede, der blev ikke beregnet nogen blurhash.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Fejl ved download af billede:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Lokal fil ikke fundet:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Udbyder ikke understøttet:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Fil ikke fundet",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "Filen er ikke et billede",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Blurhash fejl:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Fejl ved beregning af blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "Fil ikke fundet",
+  "blur-placeholder.controller.function.clear.delete.error": "Fejl ved sletning af blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "Blurhash skal være en ikke-tom streng.",
+  "blur-placeholder.controller.function.setHash.file.error": "Fil ikke fundet",
+  "blur-placeholder.controller.function.setHash.image.error": "Filen er ikke et billede",
+  "blur-placeholder.controller.function.setHash.maj.error": "Fejl ved opdatering af blurhash"
+}

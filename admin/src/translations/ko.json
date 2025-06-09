@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "배너",
+  "blur-placeholder.home.table.row.name": "이름",
+  "blur-placeholder.home.table.row.provider": "공급자",
+  "blur-placeholder.home.table.row.type": "유형",
+  "blur-placeholder.home.table.row.link": "링크",
+  "blur-placeholder.home.table.row.input": "blurhash 입력",
+
+  "blur-placeholder.home.table.row.action": "작업",
+  "blur-placeholder.home.table.row.action.delete": "삭제",
+  "blur-placeholder.home.table.row.action.validate": "확인",
+  "blur-placeholder.home.table.row.action.generate": "생성",
+  "blur-placeholder.home.table.row.action.watch": "보기",
+  "blur-placeholder.home.table.row.action.main.wrong": "잘못된 형식",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "해시 삭제",
+  "blur-placeholder.home.table.row.action.main.generate": "해시 생성",
+
+  "blur-placeholder.home.table.pagination.previous": "이전 페이지로 이동",
+  "blur-placeholder.home.table.pagination.select": "페이지로 이동",
+  "blur-placeholder.home.table.pagination.next": "다음 페이지로 이동",
+
+  "blur-placeholder.home.modal.title": "생성 미리보기",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "이름",
+  "blur-placeholder.home.modal.media.mime": "확장자",
+  "blur-placeholder.home.modal.media.weight": "용량",
+  "blur-placeholder.home.modal.media.size": "크기",
+  "blur-placeholder.home.modal.media.date": "날짜",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "닫기",
+
+  "blur-placeholder.home.function.fetchFiles.error": "파일을 가져오는 중 오류 발생",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "파일을 찾을 수 없습니다.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "이 공급자 유형에 대해 blurhash 재생성이 비활성화되어 있습니다:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "재생성 중 오류 발생:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "blurhash 재생성 중 오류 발생",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "blurhash가 성공적으로 재생성되었습니다!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "가져오기 오류:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "blurhash 재생성 중 네트워크 오류 발생",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "blurhash 삭제 중 오류 발생",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "blurhash가 성공적으로 삭제되었습니다!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "blurhash 삭제 중 네트워크 오류 발생",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "blurhash 업데이트 중 오류 발생",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "blurhash 업데이트 중 네트워크 오류 발생",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "blurhash가 성공적으로 업데이트되었습니다!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "이미지 다운로드 중 오류 발생:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "로컬 파일을 찾을 수 없습니다:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "지원되지 않는 공급자:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "누락된 blurhash 업데이트 시작...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "가져온 미디어가 배열이 아닙니다:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 미디어 id=${media.id}, url=${media.url}에 대한 blurhash 계산 중",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ id=${media.id}에 대해 blurhash 추가됨",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ 미디어 id=${media.id} url=${media.url}에 대한 blurhash 오류",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ blurhash 업데이트 완료.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 새 미디어 가져옴:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 blurhash 계산됨:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ blurhash 저장됨",
+  "blur-placeholder.boostrap.page.blurhash.error": "blurhash 계산 중 오류 발생:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "가져온 파일은 이미지가 아니므로 blurhash가 계산되지 않았습니다.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "이미지 다운로드 중 오류 발생:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "로컬 파일을 찾을 수 없습니다:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "지원되지 않는 공급자:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "파일을 찾을 수 없습니다",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "파일이 이미지가 아닙니다",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "blurhash 오류:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "blurhash 계산 중 오류 발생",
+
+  "blur-placeholder.controller.function.clear.file.error": "파일을 찾을 수 없습니다",
+  "blur-placeholder.controller.function.clear.delete.error": "blurhash 삭제 중 오류 발생",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "blurhash는 비어 있지 않은 문자열이어야 합니다.",
+  "blur-placeholder.controller.function.setHash.file.error": "파일을 찾을 수 없습니다",
+  "blur-placeholder.controller.function.setHash.image.error": "파일이 이미지가 아닙니다",
+  "blur-placeholder.controller.function.setHash.maj.error": "blurhash 업데이트 중 오류 발생"
+}

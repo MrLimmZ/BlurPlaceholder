@@ -1,0 +1,83 @@
+{
+  "blur-placeholder.home.table.row.banner": "Bàner",
+  "blur-placeholder.home.table.row.name": "Nom",
+  "blur-placeholder.home.table.row.provider": "Proveïdor",
+  "blur-placeholder.home.table.row.type": "Tipus",
+  "blur-placeholder.home.table.row.link": "Enllaç",
+  "blur-placeholder.home.table.row.input": "Introdueix un blurhash",
+
+  "blur-placeholder.home.table.row.action": "Accions",
+  "blur-placeholder.home.table.row.action.delete": "Eliminar",
+  "blur-placeholder.home.table.row.action.validate": "Validar",
+  "blur-placeholder.home.table.row.action.generate": "Generar",
+  "blur-placeholder.home.table.row.action.watch": "Visualitzar",
+  "blur-placeholder.home.table.row.action.main.wrong": "Format incorrecte",
+  "blur-placeholder.home.table.row.action.main.ungenerate": "Eliminar el hash",
+  "blur-placeholder.home.table.row.action.main.generate": "Generar un hash",
+
+  "blur-placeholder.home.table.pagination.previous": "Anar a la pàgina anterior",
+  "blur-placeholder.home.table.pagination.select": "Anar a la pàgina",
+  "blur-placeholder.home.table.pagination.next": "Anar a la pàgina següent",
+
+  "blur-placeholder.home.modal.title": "Vista prèvia de generació",
+  "blur-placeholder.home.modal.media.id": "ID",
+  "blur-placeholder.home.modal.media.name": "Nom",
+  "blur-placeholder.home.modal.media.mime": "Extensió",
+  "blur-placeholder.home.modal.media.weight": "Pes",
+  "blur-placeholder.home.modal.media.size": "Mida",
+  "blur-placeholder.home.modal.media.date": "Data",
+  "blur-placeholder.home.modal.media.hash": "Blurhash",
+  "blur-placeholder.home.modal.close": "Tancar",
+
+  "blur-placeholder.home.function.fetchFiles.error": "Error al recuperar els fitxers",
+
+  "blur-placeholder.home.function.handlereGenerateHash.file.error": "Fitxer no trobat.",
+  "blur-placeholder.home.function.handlereGenerateHash.provider.error": "La regeneració del blurhash està desactivada per aquest tipus de proveïdor:",
+  "blur-placeholder.home.function.handlereGenerateHash.generate.error": "Error durant la regeneració:",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.error": "Error durant la regeneració del blurhash",
+  "blur-placeholder.home.function.handlereGenerateHash.blurhash.success": "Blurhash regenerat amb èxit!",
+  "blur-placeholder.home.function.handlereGenerateHash.fetch.error": "Error de recuperació:",
+  "blur-placeholder.home.function.handlereGenerateHash.network.error": "Error de xarxa durant la regeneració del blurhash",
+
+  "blur-placeholder.home.function.handleClearBlurHash.delete.error": "Error durant l'eliminació del blurhash",
+  "blur-placeholder.home.function.handleClearBlurHash.delete.success": "Blurhash eliminat amb èxit!",
+  "blur-placeholder.home.function.handleClearBlurHash.network.error": "Error de xarxa durant l'eliminació del blurhash",
+
+  "blur-placeholder.home.function.handleSetCustomHash.post.error": "Error actualitzant el blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.network.error": "Error de xarxa actualitzant el blurhash",
+  "blur-placeholder.home.function.handleSetCustomHash.post.success": "Blurhash actualitzat amb èxit!",
+
+  "blur-placeholder.boostrap.function.getBlurHash.download.error": "Error baixant la imatge:",
+  "blur-placeholder.boostrap.function.getBlurHash.local.error": "Fitxer local no trobat:",
+  "blur-placeholder.boostrap.function.getBlurHash.provider.error": "Proveïdor no suportat:",
+
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.start": "Inici actualització dels blurhashs que falten...",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.table": "Els medis recuperats no són un array:",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.fetch.load": "🔹 Càlcul del blurhash per al medi id=${media.id}, url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.add": "✅ Blurhash afegit per id=${media.id}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.error": "❌ Error de blurhash per al medi id=${media.id} url=${media.url}",
+  "blur-placeholder.boostrap.function.updateMissingBlurhashes.blurhash.success": "✔️ Actualització dels blurhashs finalitzada.",
+
+  "blur-placeholder.boostrap.page.media": "🆕 Nou medi importat:",
+  "blur-placeholder.boostrap.page.blurhash.load": "🔹 Blurhash calculat:",
+  "blur-placeholder.boostrap.page.blurhash.success": "✅ Blurhash desat",
+  "blur-placeholder.boostrap.page.blurhash.error": "Error calculant el blurhash:",
+  "blur-placeholder.boostrap.page.blurhash.cancel": "El fitxer importat no és una imatge, no s'ha calculat cap blurhash.",
+
+  "blur-placeholder.controller.function.getBlurHash.download.error": "Error baixant la imatge:",
+  "blur-placeholder.controller.function.getBlurHash.local.error": "Fitxer local no trobat:",
+  "blur-placeholder.controller.function.getBlurHash.provider.error": "Proveïdor no suportat:",
+
+  "blur-placeholder.controller.function.forceUpdate.file.error": "Fitxer no trobat",
+  "blur-placeholder.controller.function.forceUpdate.image.error": "El fitxer no és una imatge",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.error": "Error de blurhash:",
+  "blur-placeholder.controller.function.forceUpdate.blurhash.calcul.error": "Error calculant el blurhash",
+
+  "blur-placeholder.controller.function.clear.file.error": "Fitxer no trobat",
+  "blur-placeholder.controller.function.clear.delete.error": "Error durant l'eliminació del blurhash",
+
+  "blur-placeholder.controller.function.setHash.blurhash.error": "El blurhash ha de ser una cadena no buida.",
+  "blur-placeholder.controller.function.setHash.file.error": "Fitxer no trobat",
+  "blur-placeholder.controller.function.setHash.image.error": "El fitxer no és una imatge",
+  "blur-placeholder.controller.function.setHash.maj.error": "Error actualitzant el blurhash"
+}
