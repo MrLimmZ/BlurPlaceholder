@@ -27,15 +27,15 @@ const SvgLogo = (
 ) => {
   const { colors } = useTheme();
 
-  const fill =
-    fillProp && fillProp in colors
-      ? colors[fillProp as keyof DefaultTheme["colors"]]
-      : fillProp;
+const fill =
+  fillProp && fillProp in colors
+    ? String(colors[fillProp as keyof DefaultTheme["colors"]])
+    : String(fillProp);
 
-  const stroke =
-    strokeProp && strokeProp in colors
-      ? colors[strokeProp as keyof DefaultTheme["colors"]]
-      : strokeProp;
+const stroke =
+  strokeProp && strokeProp in colors
+    ? String(colors[strokeProp as keyof DefaultTheme["colors"]])
+    : String(strokeProp);
 
   return (
     <svg

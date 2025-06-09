@@ -49,7 +49,7 @@ const MediaModal = ({ file }: MediaModalProps) => {
         <Modal.Body>
           <Flex gap={8} paddingBottom={8}>
             <Box width="400px">
-              <BlurhashCanvas blurhash={file.blurhash} width={400} height={300} />
+              <BlurhashCanvas blurhash={file.blurhash ?? ''} width={400} height={300} />
             </Box>
 
             <Box
