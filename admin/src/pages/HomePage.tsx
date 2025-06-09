@@ -225,7 +225,7 @@ const HomePage = () => {
             key={i}
             number={i}
             href={`/${i}`}
-            onClick={e => {
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.preventDefault();
               goToPage(i);
             }}
@@ -256,7 +256,7 @@ const HomePage = () => {
           key={1}
           number={1}
           href="/1"
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
             goToPage(1);
           }}
@@ -277,7 +277,7 @@ const HomePage = () => {
               key={i}
               number={i}
               href={`/${i}`}
-              onClick={e => {
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 goToPage(i);
               }}
@@ -296,7 +296,7 @@ const HomePage = () => {
             key={i}
             number={i}
             href={`/${i}`}
-            onClick={e => {
+            oonClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.preventDefault();
               goToPage(i);
             }}
@@ -317,7 +317,7 @@ const HomePage = () => {
               key={i}
               number={i}
               href={`/${i}`}
-              onClick={e => {
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 goToPage(i);
               }}
@@ -335,7 +335,7 @@ const HomePage = () => {
           key={pageCount}
           number={pageCount}
           href={`/${pageCount}`}
-          onClick={e => {
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
             goToPage(pageCount);
           }}

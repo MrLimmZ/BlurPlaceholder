@@ -1,6 +1,6 @@
 import { TextInput, IconButton } from '@strapi/design-system';
 import { Duplicate, Trash, Check, ArrowClockwise } from '@strapi/icons';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface HashFieldProps {
   file: {
@@ -46,7 +46,7 @@ const HashField = ({
         size="S"
         type="text"
         disabled={!isImage}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
         placeholder={isImage ? 'Entrez un blurhash' : ''}
       />
 
