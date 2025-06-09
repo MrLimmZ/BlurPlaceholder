@@ -1,7 +1,41 @@
 {
-  "version": "0.0.0",
-  "keywords": [],
+  "name": "strapi-plugin-blur-placeholder",
+  "version": "0.1.0",
+  "description": "Blur image download for placeholder",
+  "keywords": [
+    "strapi",
+    "plugin",
+    "blurhash",
+    "lqip",
+    "image",
+    "placeholder",
+    "cloudinary",
+    "sharp"
+  ],
+  "license": "MIT",
+  "author": "MrLimmZ <contact@michelaxel.fr>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MrLimmZ/BlurPlaceholder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrLimmZ/BlurPlaceholder/issues"
+  },
+  "homepage": "https://github.com/MrLimmZ/BlurPlaceholder#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
   "type": "commonjs",
+  "strapi": {
+    "kind": "plugin",
+    "name": "blur-placeholder",
+    "displayName": "BlurPlaceholder",
+    "description": "Blur image download for placeholder"
+  },
   "exports": {
     "./package.json": "./package.json",
     "./strapi-admin": {
@@ -65,23 +99,5 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.30.1",
     "styled-components": "^6.1.18"
-  },
-  "strapi": {
-    "kind": "plugin",
-    "name": "blur-placeholder",
-    "displayName": "BlurPlaceholder",
-    "description": "Blur image download for placeholder"
-  },
-  "name": "blur-placeholder",
-  "description": "Blur image download for placeholder",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/MrLimmZ/BlurPlaceholder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/MrLimmZ/BlurPlaceholder/issues"
-  },
-  "homepage": "https://github.com/MrLimmZ/BlurPlaceholder#readme",
-  "author": "Michel <axelmichel44@gmail.com>"
+  }
 }
