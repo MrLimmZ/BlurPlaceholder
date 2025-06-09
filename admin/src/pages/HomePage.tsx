@@ -19,8 +19,8 @@ import {
   PageLink,
   Dots,
   NextLink,
+  Checkbox
 } from '@strapi/design-system';
-import { Duplicate, Trash, Check, ArrowClockwise } from '@strapi/icons';
 import { useIntl } from 'react-intl';
 import { useFetchClient } from '@strapi/strapi/admin';
 import { getTranslation } from '../utils/getTranslation';
@@ -419,6 +419,7 @@ const HomePage = () => {
         <Table colCount={5} rowCount={files.length}>
           <Thead>
             <Tr>
+              <Th><Checkbox aria-label="Select all entries" /></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.banner') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.name') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.provider') })}</Typography></Th>
@@ -430,6 +431,9 @@ const HomePage = () => {
           <Tbody>
             {currentFiles.map((file) => (
               <Tr key={file.id}>
+                <Td>
+                  <Checkbox aria-label={`Select ${file.id}`} />
+                </Td>
                 <Td>
                   <Avatar.Item src={file.url} alt={file.alternativeText} />
                 </Td>

@@ -1,4 +1,9 @@
-# Blur Placeholder Plugin for Strapi
+<div align="center">
+  <img style="width: 160px; height: auto;" src="public/logo-2x.png" alt="Logo" />
+  <h1>Blur Placeholder</h1>
+  <p>Le plugin strapi pour la génération de vos placeholder</p>
+  <img style="width: 960px; height: auto;" src="public/screenshot.png" alt="Screenshot Menu Plugin" />
+</div>
 
 
 **Version :** 1.0.0  
@@ -53,6 +58,7 @@ ou
 yarn add strapi-plugin-blur-placeholder
 ```
 
+N'oubliez pas de restart ou rebuild votre application Strapi lors de l'installation d'un nouveau plugin.
 
 ## 🧰 Configuration
 
@@ -66,6 +72,9 @@ Une fois installé :
 
 Aucune configuration manuelle de fichiers n’est nécessaire.
 
+<div align="center">
+  <img style="width: 960px; height: auto;" src="public/screenshot-public-api.png" alt="Screenshot Permission API" />
+</div>
 
 ## ✅ Compatibilité
 

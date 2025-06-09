@@ -82,66 +82,32 @@ const updateMissingBlurhashes = async () => {
   console.log('✔️ Mise à jour des blurhash terminée.');
 };
 
-const enableDefaultPermissions = async () => {
-  const roles = await strapi
-    .query('plugin::users-permissions.role')
-    .findMany();
+const setPermissionBlurhashes = async () => {
+  const superAdminRole = await strapi.admin.services.role.getSuperAdmin();
 
-  const adminRole = roles.find(r => r.name === 'Administrator');
+  const actionUID = 'plugin::blur-placeholder.read';
 
-  if (!adminRole) return;
+  const exists = await strapi.db.query('admin::permission').findOne({
+    where: {
+      action: actionUID,
+      role: superAdminRole.id,
+    },
+  });
 
-const enableDefaultPermissions = async () => {
-  const roles = await strapi.entityService.findMany('plugin::users-permissions.role', {});
-
-  const adminRole = roles.find(r => r.name === 'Administrator');
-  if (!adminRole) return;
-
-  const actionsToEnable = [
-    'plugin::blur-placeholder.force-update',
-    'plugin::blur-placeholder.clear',
-    'plugin::blur-placeholder.setHash',
-    // ajoute les autres actions nécessaires
-  ];
-
-  for (const action of actionsToEnable) {
-    // Chercher si la permission existe
-    const existingPerms = await strapi.entityService.findMany('plugin::users-permissions.permission', {
-      filters: { role: adminRole.id, action },
-      limit: 1,
-    });
-
-    if (existingPerms.length === 0) {
-      // Créer la permission si elle n'existe pas
-      await strapi.entityService.create('plugin::users-permissions.permission', {
-        data: {
-          role: adminRole.id,
-          action,
-          enabled: true,
-        },
-      });
-    } else {
-      // Sinon mettre à jour si besoin
-      const perm = existingPerms[0];
-      if (!perm.enabled) {
-        await strapi.entityService.update('plugin::users-permissions.permission', perm.id, {
-          data: { enabled: true },
-        });
-      }
-    }
-  }
-};
-
-
-  for (const perm of permissionsToEnable) {
-    await strapi.query('plugin::users-permissions.permission').createOrUpdate({
-      where: { role: perm.role, action: perm.action },
-      create: { role: perm.role, action: perm.action, enabled: true },
-      update: { enabled: true },
+  if (!exists) {
+    await strapi.db.query('admin::permission').create({
+      data: {
+        action: actionUID,
+        role: superAdminRole.id,
+        enabled: true,
+        conditions: [],
+        properties: {},
+        actionParameters: {},
+      },
     });
   }
-};
 
+}
 
 const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
   strapi.db.lifecycles.subscribe({
@@ -170,7 +136,8 @@ const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
   });
 
   await updateMissingBlurhashes();
-  await enableDefaultPermissions;
+
+  await setPermissionBlurhashes()
 };
 
 export default bootstrap;
