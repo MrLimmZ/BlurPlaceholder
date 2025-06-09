@@ -1,0 +1,24 @@
+{
+  "name": "blur-placeholder",
+  "displayName": "Blur Placeholder",
+  "description": "Ajoutez un système de placeholder flou aux images de vos médias avec Blurhash, LQIP, SQIP ou Color Thief.",
+  "kind": "plugin",
+  "strapi": {
+    "name": "blur-placeholder",
+    "displayName": "Blur Placeholder",
+    "version": "1.0.0",
+    "required": true
+  },
+  "author": {
+    "name": "MrLimmZ",
+    "email": "contact@michelaxel.fr",
+    "url": "https://ton-site.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrLimmZ/BlurPlaceholder"
+  },
+  "icon": "image",
+  "license": "MIT",
+  "strapiVersion": ">=5.14.0"
+}

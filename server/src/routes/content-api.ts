@@ -4,7 +4,7 @@ export default [
     path: '/force-update/:id',
     handler: 'controller.forceUpdate',
     config: {
-      policies: [],
+      policies: ['plugin::blur-placeholder.is-admin'],
     },
   },
   {
@@ -12,7 +12,7 @@ export default [
     path: '/clear/:id',
     handler: 'controller.clear',
     config: {
-      policies: [],
+      policies: ['plugin::blur-placeholder.is-admin'],
     },
   },
   {
@@ -20,7 +20,7 @@ export default [
     path: '/set/:id',
     handler: 'controller.setHash',
     config: {
-      policies: [],
+      policies: ['plugin::blur-placeholder.is-admin'],
     },
   },
   {
@@ -28,7 +28,7 @@ export default [
     path: '/config',
     handler: 'config.get',
     config: {
-      policies: [],
+      policies: ['plugin::blur-placeholder.is-admin'],
     },
   },
   {
@@ -36,7 +36,7 @@ export default [
     path: '/config',
     handler: 'config.set',
     config: {
-      policies: [],
+      policies: ['plugin::blur-placeholder.is-admin'],
     },
   },
 ];
