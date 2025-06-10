@@ -19,14 +19,16 @@ import {
   PageLink,
   Dots,
   NextLink,
-  Checkbox
+  Checkbox,
+  SingleSelect,
+  SingleSelectOption
 } from '@strapi/design-system';
 import { useIntl } from 'react-intl';
 import { useFetchClient } from '@strapi/strapi/admin';
 import { getTranslation } from '../utils/getTranslation';
 import SettingsModal from '../components/SettingsModal';
-import MediaModal from '../components/MediaModal';
 import HashField from '../components/HashField';
+import { Trash, ArrowsCounterClockwise } from '@strapi/icons';
 
 import { formatMime } from '../utils/formatMime';
 import { formatProvider } from '../utils/formatProvider';
@@ -46,21 +48,35 @@ interface FileItem {
 }
 
 const HomePage = () => {
+
+  // Traduction
   const { formatMessage } = useIntl();
+
+  // API
   const { get, post } = useFetchClient();
   const [files, setFiles] = useState<FileItem[]>([]);
+
+  // Table
+  const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [customHashes, setCustomHashes] = useState<{ [key: number]: string }>({});
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const pageCount = Math.ceil(files.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const pageCount = Math.ceil(files.length / entriesPerPage);
+  const indexOfLastItem = currentPage * entriesPerPage;
+  const indexOfFirstItem = indexOfLastItem - entriesPerPage;
   const currentFiles = files.slice(indexOfFirstItem, indexOfLastItem);
+  const [selectedFiles, setSelectedFiles] = useState<number[]>([]);
+  const allSelected = currentFiles.length > 0 && selectedFiles.length === currentFiles.length;
+  const someSelected = selectedFiles.length > 0 && selectedFiles.length < currentFiles.length;
+
+  // Action button
   const [isGenerating, setIsGenerating] = useState(false);
+
+  // Alert
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
+
+  // Config
   const [rangeBlurhash, setRangeBlurhash] = useState(4);
   const [toolSelected, setToolSelected] = useState('blurhash');
-  const [isOpen, setIsOpen] = useState(false);
 
 
   // Récupération API
@@ -109,7 +125,15 @@ const HomePage = () => {
     };
 
     fetchFiles();
-  }, [get]);
+
+    if (alertMessage) {
+      const timeout = setTimeout(() => {
+        setAlertMessage(null);
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [get, alertMessage]);
 
   // Fonction de génération Hash
   const handleRegenerateHash = async (fileId: number) => {
@@ -149,60 +173,6 @@ const HomePage = () => {
     } catch (error) {
       console.error('Erreur fetch:', error);
       alert('Erreur réseau lors de la régénération du blurhash');
-    }
-  };
-
-  // Fonction de suppression de Hash
-  const handleClearBlurhash = async (fileId: number) => {
-    try {
-      const response = await fetch(`/api/blur-placeholder/clear/${fileId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      if (!response.ok) {
-        const err = await response.json();
-        console.error('Erreur lors de la suppression du blurhash:', err);
-        alert('Erreur lors de la suppression du blurhash');
-        return;
-      }
-
-      const updatedFile = await response.json();
-
-      setFiles(prev =>
-        prev.map(file => (file.id === fileId ? updatedFile : file))
-      );
-    } catch (error) {
-      console.error('Erreur réseau:', error);
-      alert('Erreur réseau lors de la suppression du blurhash');
-    }
-  };
-
-  // Fonction personnalisation Hash
-  const handleSetCustomHash = async (fileId: number, customHash: string) => {
-    try {
-      const response = await fetch(`/api/blur-placeholder/set/${fileId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ blurhash: customHash }),
-      });
-
-      if (!response.ok) {
-        const err = await response.json();
-        console.error('Erreur lors de la mise à jour du blurhash:', err);
-        alert('Erreur lors de la mise à jour du blurhash');
-        return;
-      }
-
-      const updatedFile = await response.json();
-      alert('Blurhash mis à jour avec succès !');
-
-      setFiles(prev =>
-        prev.map(file => (file.id === fileId ? updatedFile : file))
-      );
-    } catch (error) {
-      console.error('Erreur réseau:', error);
-      alert('Erreur réseau lors de la mise à jour du blurhash');
     }
   };
 
@@ -296,7 +266,7 @@ const HomePage = () => {
             key={i}
             number={i}
             href={`/${i}`}
-            oonClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
               e.preventDefault();
               goToPage(i);
             }}
@@ -378,6 +348,31 @@ const HomePage = () => {
     ).length;
   };
 
+  // Fonction clear
+  const handleClearBlurhash = async (fileId: number) => {
+    try {
+      const response = await fetch(`/api/blur-placeholder/clear/${fileId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        console.error('Erreur lors de la suppression du blurhash:', err);
+        alert('Erreur lors de la suppression du blurhash');
+        return;
+      }
+
+      const updatedFile = await response.json();
+
+      setFiles(prev =>
+        prev.map(file => (file.id === fileId ? updatedFile : file))
+      );
+    } catch (error) {
+      console.error('Erreur réseau:', error);
+      alert('Erreur réseau lors de la suppression du blurhash');
+    }
+  };
 
   return (
     <Main>
@@ -385,7 +380,7 @@ const HomePage = () => {
         <Flex paddingBottom={10} justifyContent="space-between" width="100%">
           <Box>
             <Typography variant="alpha" paddingRight={3}>Blur Placeholder</Typography>
-            <Typography variant="epsilon" textColor="neutral600">v1.0.0</Typography>
+            <Typography variant="epsilon" textColor="neutral600">v0.1.0</Typography>
           </Box>
 
           <Flex gap={4}>
@@ -395,8 +390,6 @@ const HomePage = () => {
                 : `Génération global (${countEligibleFiles()} Fichiers)`}
             </Button>
             <SettingsModal
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
               rangeBlurhash={rangeBlurhash}
               setRangeBlurhash={setRangeBlurhash}
               toolSelected={toolSelected}
@@ -416,26 +409,83 @@ const HomePage = () => {
           </Alert>
         )}
 
+        {selectedFiles.length > 0 && (
+          <Flex gap={2} paddingBottom={6}>
+            <Typography variant="omega">
+              {selectedFiles.length} fichier{selectedFiles.length > 1 ? 's' : ''} sélectionné{selectedFiles.length > 1 ? 's' : ''}
+            </Typography>
+            <Button
+              variant="danger-light"
+              startIcon={<Trash />}
+              onClick={() => {
+                selectedFiles.forEach(fileId => {
+                  handleClearBlurhash(fileId);
+                });
+              }}>
+              Supprimer le hash
+            </Button>
+            <Button
+              variant="secondary"
+              startIcon={<ArrowsCounterClockwise />}
+              onClick={() => {
+                selectedFiles.forEach(fileId => {
+                  handleRegenerateHash(fileId);
+                });
+                setAlertMessage(`Génération terminée pour ${selectedFiles.length} fichier(s)`);
+              }}>
+              Régénérer le hash
+            </Button>
+          </Flex>
+        )}
+
         <Table colCount={5} rowCount={files.length}>
           <Thead>
             <Tr>
-              <Th><Checkbox aria-label="Select all entries" /></Th>
+              <Th>
+                <Checkbox
+                  checked={allSelected ? true : someSelected ? "indeterminate" : false}
+                  onCheckedChange={() => {
+                    if (allSelected || someSelected) {
+                      setSelectedFiles([]);
+                    } else {
+                      setSelectedFiles(
+                        currentFiles
+                          .filter(file => file.mime.startsWith('image/'))
+                          .map(file => file.id)
+                      );
+                    }
+                  }}
+                  aria-label="Select all entries"
+                />
+              </Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.banner') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.name') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.provider') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.type') })}</Typography></Th>
               <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.link') })}</Typography></Th>
-              <Th><Typography variant="sigma">{formatMessage({ id: getTranslation('home.table.row.action') })}</Typography></Th>
             </Tr>
           </Thead>
           <Tbody>
             {currentFiles.map((file) => (
               <Tr key={file.id}>
                 <Td>
-                  <Checkbox aria-label={`Select ${file.id}`} />
+                  <Checkbox
+                    disabled={!file.mime.startsWith('image/')}
+                    checked={selectedFiles.includes(file.id)}
+                    onCheckedChange={(checked: boolean) => {
+                      setSelectedFiles(prev => {
+                        if (checked) {
+                          return [...prev, file.id];
+                        } else {
+                          return prev.filter(id => id !== file.id);
+                        }
+                      });
+                    }}
+                    aria-label={`Select ${file.id}`}
+                  />
                 </Td>
                 <Td>
-                  <Avatar.Item src={file.url} alt={file.alternativeText} />
+                  <Avatar.Item src={file.url} alt={file.alternativeText} preview fallback="B" />
                 </Td>
                 <Td>
                   <Typography>{file.name}</Typography>
@@ -451,35 +501,44 @@ const HomePage = () => {
                     <HashField
                       file={file}
                       value={customHashes[file.id] ?? file.blurhash ?? ''}
+                      force={rangeBlurhash}
                       onChange={(val) =>
                         setCustomHashes((prev) => ({ ...prev, [file.id]: val }))
                       }
-                      onClear={() => handleClearBlurhash(file.id)}
-                      onSend={() => handleSetCustomHash(file.id, customHashes[file.id] ?? '')}
-                      onGenerate={() => handleRegenerateHash(file.id)}
+                      onSendSuccess={(newHash) => {
+                        file.blurhash = newHash;
+
+                        setCustomHashes((prev) => {
+                          const { [file.id]: _, ...rest } = prev;
+                          return rest;
+                        });
+                      }}
                     />
-                    <MediaModal file={file} />
                   </Flex>
-                </Td>
-                <Td>
-                  {!file.mime.startsWith('image/') && (
-                    <Button disabled>Mauvais format</Button>
-                  )}
-                  {file.mime.startsWith('image/') && file.blurhash && (
-                    <Button variant="tertiary" onClick={() => handleRegenerateHash(file.id)}>
-                      Regénérer Hash
-                    </Button>
-                  )}
-                  {file.mime.startsWith('image/') && !file.blurhash && (
-                    <Button onClick={() => handleRegenerateHash(file.id)}>Générer Hash</Button>
-                  )}
                 </Td>
               </Tr>
             ))}
           </Tbody>
         </Table>
 
-        <Box paddingTop={6}>
+        <Flex justifyContent="space-between" width="100%" paddingTop={6}>
+          <Flex gap={2}>
+            <SingleSelect
+              label="Entrées par page"
+              value={String(entriesPerPage)}
+              onChange={(value: string) => {
+                setEntriesPerPage(Number(value));
+                setCurrentPage(1);
+              }}
+            >
+              {[10, 20, 50, 100].map((num) => (
+                <SingleSelectOption key={num} value={String(num)}>
+                  {num}
+                </SingleSelectOption>
+              ))}
+            </SingleSelect>
+            <Typography variant="omega">entrées par page</Typography>
+          </Flex>
           <Pagination activePage={currentPage} pageCount={pageCount}>
             <PreviousLink
               href={`/${currentPage - 1}`}
@@ -505,7 +564,7 @@ const HomePage = () => {
               Go to next page
             </NextLink>
           </Pagination>
-        </Box>
+        </Flex>
 
       </Box>
     </Main>

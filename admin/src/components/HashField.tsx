@@ -1,41 +1,101 @@
 import { TextInput, IconButton } from '@strapi/design-system';
 import { Duplicate, Trash, Check, ArrowClockwise } from '@strapi/icons';
 import React, { useState } from 'react';
+import MediaModal from '../components/MediaModal';
 
 interface HashFieldProps {
   file: {
-    id: number | string;
+    id: number;
+    name: string;
+    size: number;
     mime: string;
+    width: number;
+    height: number;
+    createdAt: Date;
+    provider: string;
     blurhash?: string;
+    [key: string]: any;
   };
   value: string;
+  force: number;
   onChange: (value: string) => void;
-  onClear: () => void;
-  onSend: () => void;
-  onGenerate: () => void;
+  onSendSuccess?: (newValue: string) => void;
 }
 
 const HashField = ({
   file,
   value,
   onChange,
-  onClear,
-  onSend,
-  onGenerate,
+  force,
+  onSendSuccess,
 }: HashFieldProps) => {
   const isImage = file.mime.startsWith('image/');
   const [copied, setCopied] = useState(false);
+  const [initialValue, setInitialValue] = useState(file.blurhash || '');
+  const isValueChanged = value !== initialValue;
 
-  const handleCopy = async () => {
-    if (!file.blurhash) return;
-
+  // Copy
+  const copyInput = async () => {
     try {
-      await navigator.clipboard.writeText(file.blurhash);
+      await navigator.clipboard.writeText(value);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      console.log('📋 Copié dans le presse-papiers :', file.blurhash);
     } catch (err) {
       console.error('❌ Erreur lors de la copie :', err);
+    }
+  };
+
+  // Clear
+  const clearInput = () => {
+    onChange('');
+  };
+
+  // Hash Generate
+  const hashInput = async () => {
+    try {
+      const response = await fetch(`/api/blur-placeholder/hash/${file.id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ force: force }),
+      });
+
+      const blurhash = await response.text();
+      onChange(blurhash)
+    } catch (error) {
+      console.error('Erreur fetch:', error);
+      alert('Erreur réseau lors de la régénération du blurhash');
+    }
+  };
+
+  // Post
+  const sendInput = async () => {
+    try {
+      const blurhashToSend = value;
+
+      const response = await fetch(`/api/blur-placeholder/set/${file.id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ blurhash: blurhashToSend }),
+      });
+
+      if (!response.ok) {
+        const err = await response.text();
+        console.error('Erreur lors de l\'envoi:', err);
+        alert('Erreur lors de l\'envoi du blurhash');
+        return;
+      }
+
+      setInitialValue(blurhashToSend);
+
+      if (onSendSuccess) {
+        onSendSuccess(blurhashToSend);
+      }
+
+    } catch (error) {
+      console.error('Erreur réseau lors de l\'envoi:', error);
+      alert('Erreur réseau lors de l\'envoi du blurhash');
     }
   };
 
@@ -52,37 +112,43 @@ const HashField = ({
 
       <IconButton
         type="button"
-        disabled={!file.blurhash}
+        disabled={!value}
         label={copied ? 'Copié !' : 'Copier le hash'}
-        onClick={handleCopy}
+        onClick={copyInput}
       >
         <Duplicate />
       </IconButton>
 
+      <MediaModal blurhash={value} file={file} />
+
       <IconButton
         type="button"
-        disabled={!file.blurhash}
+        disabled={!value}
         label="Supprimer"
-        onClick={onClear}
+        onClick={clearInput}
       >
         <Trash />
       </IconButton>
 
       <IconButton
         type="button"
-        label="Envoyer"
-        onClick={onSend}
+        label="Générer"
+        disabled={!isImage}
+        onClick={hashInput}
       >
-        <Check />
+        <ArrowClockwise />
       </IconButton>
 
       <IconButton
         type="button"
-        label="Générer"
-        onClick={onGenerate}
+        label="Envoyer"
+        variant="default"
+        disabled={!isValueChanged}
+        onClick={sendInput}
       >
-        <ArrowClockwise />
+        <Check />
       </IconButton>
+
     </>
   );
 };
