@@ -14,6 +14,7 @@ import { formatMime } from '../utils/formatMime';
 import { formatProvider } from '../utils/formatProvider';
 
 interface MediaModalProps {
+  blurhash: string,
   file: {
     id: number;
     name: string;
@@ -28,14 +29,14 @@ interface MediaModalProps {
   };
 }
 
-const MediaModal = ({ file }: MediaModalProps) => {
+const MediaModal = ({ file, blurhash }: MediaModalProps) => {
   return (
     <Modal.Root>
       <Modal.Trigger>
         <IconButton
           label="Voir"
           type="button"
-          disabled={!file.blurhash}
+          disabled={!blurhash || blurhash.length <= 6}
         >
           <Eye />
         </IconButton>
@@ -49,7 +50,7 @@ const MediaModal = ({ file }: MediaModalProps) => {
         <Modal.Body>
           <Flex gap={8} paddingBottom={8}>
             <Box width="400px">
-              <BlurhashCanvas blurhash={file.blurhash} width={400} height={300} />
+              <BlurhashCanvas blurhash={blurhash ?? ''} width={400} height={300} />
             </Box>
 
             <Box
@@ -79,7 +80,6 @@ const MediaModal = ({ file }: MediaModalProps) => {
                   <Typography as="div">{(file.size / 1024).toFixed(2)} KB</Typography>
                 </Box>
               </Box>
-
               <Box flex="0 0 50%">
                 <Box paddingBottom={2}>
                   <Typography variant="pi" fontWeight="bold" as="div">Dimensions</Typography>
@@ -100,7 +100,7 @@ const MediaModal = ({ file }: MediaModalProps) => {
             <TextInput
               size="M"
               type="text"
-              value={file.blurhash}
+              value={blurhash}
             />
           </Box>
         </Modal.Body>

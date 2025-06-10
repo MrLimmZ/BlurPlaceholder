@@ -11,10 +11,9 @@ import {
 import { SlidersHorizontal } from '@strapi/icons';
 import BlurhashCanvas from './BlurhashCanvas';
 import RangeInput from './RangeInput';
+import React, { useState } from 'react';
 
 interface SettingsModalProps {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
   rangeBlurhash: number;
   setRangeBlurhash: (val: number) => void;
   toolSelected: string;
@@ -22,13 +21,12 @@ interface SettingsModalProps {
 }
 
 const SettingsModal = ({
-  isOpen,
-  setIsOpen,
   rangeBlurhash,
   setRangeBlurhash,
   toolSelected,
   setToolSelected,
 }: SettingsModalProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const blurhashesByForce: { [key: number]: string } = {
     1: "00GS=q",
     2: "AvGS=qx]ThV[",
@@ -100,20 +98,23 @@ const SettingsModal = ({
                 <ComboboxOption value="sqip">SQIP</ComboboxOption>
               </Combobox>
 
-              <Box>
-                <Typography variant="omega" marginBottom={2} marginTop={2}>
-                  Force du blurhash : {rangeBlurhash}
-                </Typography>
+              {toolSelected === 'blurhash' && (
+                <Box>
+                  <Typography variant="omega" marginBottom={2} marginTop={2}>
+                    Force du blurhash : {rangeBlurhash}
+                  </Typography>
 
-                <RangeInput
-                  min={1}
-                  max={9}
-                  value={rangeBlurhash}
-                  onChange={(e) => setRangeBlurhash(Number(e.target.value))}
-                  aria-label="Force du blurhash"
-                  $progress={((rangeBlurhash - 1) / (9 - 1)) * 100}
-                />
-              </Box>
+                  <RangeInput
+                    min={1}
+                    max={9}
+                    value={rangeBlurhash}
+                    onChange={(e) => setRangeBlurhash(Number(e.target.value))}
+                    aria-label="Force du blurhash"
+                    $progress={((rangeBlurhash - 1) / (9 - 1)) * 100}
+                  />
+                </Box>
+              )}
+
             </Box>
           </Flex>
         </Modal.Body>

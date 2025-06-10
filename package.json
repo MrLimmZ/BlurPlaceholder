@@ -75,6 +75,8 @@
     "@strapi/design-system": "^2.0.0-rc.24",
     "@strapi/icons": "^2.0.0-rc.24",
     "blurhash": "^2.0.5",
+    "chalk": "^5.4.1",
+    "log-update": "^6.1.0",
     "node-fetch": "^3.3.2",
     "react-intl": "^7.1.11",
     "sharp": "^0.34.2"
