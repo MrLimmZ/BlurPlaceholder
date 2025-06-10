@@ -443,7 +443,7 @@ const HomePage = () => {
 
         <Box paddingBottom={4}>
           <SearchForm>
-            <Searchbar name="searchbar" onClear={() => setSearchValue('')} value={searchValue} onChange={e => setSearchValue(e.target.value)} clearLabel="Nettoyer la recherche" placeholder="e.g: nom-du-media.png">
+            <Searchbar name="searchbar" onClear={() => setSearchValue('')} value={searchValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)} clearLabel="Nettoyer la recherche" placeholder="e.g: nom-du-media.png">
               Recherchez un média
             </Searchbar>
           </SearchForm>
@@ -559,7 +559,7 @@ const HomePage = () => {
               }}
               aria-disabled={currentPage === 1}
             >
-              Go to previous page
+              Go to previous
             </PreviousLink>
 
             {renderPageLinks()}
@@ -572,7 +572,7 @@ const HomePage = () => {
               }}
               aria-disabled={currentPage === pageCount}
             >
-              Go to next page
+              Go to next
             </NextLink>
           </Pagination>
         </Flex>
