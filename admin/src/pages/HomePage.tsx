@@ -559,7 +559,7 @@ const HomePage = () => {
               }}
               aria-disabled={currentPage === 1}
             >
-              Go to previous page
+              Go to previous
             </PreviousLink>
 
             {renderPageLinks()}
@@ -572,7 +572,7 @@ const HomePage = () => {
               }}
               aria-disabled={currentPage === pageCount}
             >
-              Go to next page
+              Go to next
             </NextLink>
           </Pagination>
         </Flex>
