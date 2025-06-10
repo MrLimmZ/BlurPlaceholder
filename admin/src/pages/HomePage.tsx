@@ -443,7 +443,7 @@ const HomePage = () => {
 
         <Box paddingBottom={4}>
           <SearchForm>
-            <Searchbar name="searchbar" onClear={() => setSearchValue('')} value={searchValue} onChange={e => setSearchValue(e.target.value)} clearLabel="Nettoyer la recherche" placeholder="e.g: nom-du-media.png">
+            <Searchbar name="searchbar" onClear={() => setSearchValue('')} value={searchValue} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)} clearLabel="Nettoyer la recherche" placeholder="e.g: nom-du-media.png">
               Recherchez un média
             </Searchbar>
           </SearchForm>
