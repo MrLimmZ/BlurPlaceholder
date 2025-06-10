@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-blur-placeholder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Blur image download for placeholder",
   "keywords": [
     "strapi",
