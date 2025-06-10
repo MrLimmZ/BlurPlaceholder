@@ -3,6 +3,7 @@ import sharp from 'sharp';
 import { encode } from 'blurhash';
 import fs from 'fs';
 import path from 'path';
+import { logger } from './utils/logger';
 
 let fetchFn: typeof fetch | null = null;
 
@@ -55,63 +56,84 @@ const getBlurhash = async (file: { url: string; provider: string }): Promise<str
 };
 
 const updateMissingBlurhashes = async () => {
-  console.log('🔄 Début de mise à jour des blurhash manquants...');
+  logger.info('Starting to update missing blurhash...');
 
   const medias = (await strapi.entityService.findMany('plugin::upload.file', {
-    filters: { mime: { $contains: 'image/' }, blurhash: null },
+    filters: {
+      mime: { $contains: 'image/' },
+      $or: [
+        { blurhash: null },
+        { blurhash: '' }
+      ]
+    },
     fields: ['id', 'url', 'mime', 'provider'],
     limit: 1000,
   })) as Array<{ id: number; url: string; mime: string; provider: string }>;
 
   if (!Array.isArray(medias)) {
-    console.error('Les médias récupérés ne sont pas un tableau:', medias);
+    logger.error('Les médias récupérés ne sont pas un tableau', medias);
     return;
   }
 
+  const results: Array<{ file: string; hash: string; duration: string }> = [];
+  let totalDurationMs = 0;
+
   for (const media of medias) {
     try {
-      console.log(`🔹 Calcul blurhash pour média id=${media.id}, url=${media.url}`);
+      const start = Date.now();
+
       const blurhash = await getBlurhash(media);
+
+      const durationMs = Date.now() - start;
+      totalDurationMs += durationMs;
+
+      const duration = `${durationMs}ms`;
+
       await strapi.entityService.update('plugin::upload.file', media.id, {
         data: { blurhash } as any,
       });
-      console.log(`✅ Blurhash ajouté pour id=${media.id}`);
+
+      results.push({ file: media.url.split('/').pop() || media.url, hash: blurhash, duration });
     } catch (error) {
-      console.error(`❌ Erreur blurhash média id=${media.id} url=${media.url}`);
-      console.error(error);
+      logger.error(`Erreur blurhash pour id=${media.id}, url=${media.url}`, error);
     }
   }
 
-  console.log('✔️ Mise à jour des blurhash terminée.');
+  if (results.length) {
+    console.log("");
+    logger.renderTable(results);
+  }
+
+  logger.success(`Blurhash update completed for ${results.length} file(s) (${totalDurationMs}ms)`);
+  console.log("");
 };
 
 const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
   const config = strapi.config.get('plugin::blur-placeholder') as BlurhashConfig;
-  if (!config?.autoload) {
+  if (config?.autoload === false) {
+    logger.error('Blurhash autoload disabled');
     return;
   } else {
-    console.log('✅ Blurhash autoload activé dans la config.');
+    logger.success('Blurhash autoload enabled');
+    logger.title('Autohash Service');
     strapi.db.lifecycles.subscribe({
       models: ['plugin::upload.file'],
       async afterCreate(event) {
         const { result } = event;
-        console.log('🆕 Nouveau média importé:', result);
 
         if (result.mime.startsWith('image/')) {
           try {
             const blurhash = await getBlurhash(result);
-            console.log('🔹 Blurhash calculé:', blurhash);
 
             await strapi.entityService.update('plugin::upload.file', result.id, {
               data: { blurhash } as any,
             });
 
-            console.log('✅ Blurhash sauvegardé');
           } catch (error) {
-            console.error('Erreur calcul blurhash:', error);
+            logger.error(`Erreur de calcul du blurhash pour id=${result.id}`, error);
           }
         } else {
-          console.log('Le fichier importé n\'est pas une image, pas de blurhash calculé.');
+          logger.warn('LIFECYCLE', `Fichier non-image ignoré (id=${result.id}, mime=${result.mime})`);
         }
       },
     });
