@@ -98,10 +98,6 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
     const id = Number(ctx.params.id);
     const { blurhash } = ctx.request.body;
 
-    if (!blurhash || typeof blurhash !== 'string') {
-      return ctx.badRequest('Le blurhash doit être une chaîne de caractères non vide.');
-    }
-
     // Récupérer le fichier
     const file = await strapi.entityService.findOne('plugin::upload.file', id);
     if (!file) {
@@ -122,6 +118,28 @@ const controller = ({ strapi }: { strapi: Core.Strapi }) => ({
     } catch (error) {
       console.error('Erreur lors de la mise à jour du blurhash :', error);
       ctx.internalServerError('Erreur lors de la mise à jour du blurhash');
+    }
+  },
+  async hash(ctx) {
+    const id = Number(ctx.params.id);
+    const file = await strapi.entityService.findOne('plugin::upload.file', id);
+    const { force } = ctx.request.body;
+
+    if (!file) {
+      return ctx.notFound('Fichier non trouvé');
+    }
+
+    if (!file.mime.startsWith('image/')) {
+      return ctx.badRequest('Le fichier n\'est pas une image');
+    }
+
+    try {
+      const blurhash = await getBlurhash(file, force);
+
+      ctx.body = blurhash;
+    } catch (error) {
+      console.error('Erreur blurhash:', error);
+      ctx.internalServerError('Erreur lors du calcul du blurhash');
     }
   },
 });

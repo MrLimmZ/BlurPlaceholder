@@ -9,6 +9,14 @@ export default [
   },
   {
     method: 'POST',
+    path: '/hash/:id',
+    handler: 'controller.hash',
+    config: {
+      policies: [],
+    },
+  },
+  {
+    method: 'POST',
     path: '/clear/:id',
     handler: 'controller.clear',
     config: {

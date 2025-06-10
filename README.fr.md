@@ -61,6 +61,17 @@ yarn add strapi-plugin-blur-placeholder
 
 N'oubliez pas de restart ou rebuild votre application Strapi lors de l'installation d'un nouveau plugin.
 
+Ajouter dans config/plugins.ts la configuration suivante :
+
+```bash
+'blur-placeholder': {
+  config: {
+    autoload: true,
+    tool: "blurhash",
+  }
+}
+```
+
 ## 🧰 Configuration
 
 Une fois installé :

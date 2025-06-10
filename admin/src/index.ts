@@ -89,7 +89,7 @@ export default {
       icon: PluginIcon,
       intlLabel: {
         id: `${PLUGIN_ID}.plugin.name`,
-        defaultMessage: PLUGIN_ID,
+        defaultMessage: "Blur Placeholder",
       },
       Component: async () => {
         const { App } = await import('./pages/App');
