@@ -6,6 +6,10 @@ import path from 'path';
 
 let fetchFn: typeof fetch | null = null;
 
+interface BlurhashConfig {
+  autoload?: boolean;
+}
+
 async function getFetch() {
   if (!fetchFn) {
     const mod = await import('node-fetch');
@@ -24,7 +28,6 @@ const getBlurhashFromBuffer = async (buffer: Buffer): Promise<string> => {
   return encode(new Uint8ClampedArray(data), info.width, info.height, 4, 4);
 };
 
-// 🔁 Fonction qui prend maintenant un média complet pour savoir s'il est local ou Cloudinary
 const getBlurhash = async (file: { url: string; provider: string }): Promise<string> => {
   // Cloudinary : télécharger via URL
   if (file.provider === '@strapi/provider-upload-cloudinary') {
@@ -40,7 +43,7 @@ const getBlurhash = async (file: { url: string; provider: string }): Promise<str
 
   // Local : lire depuis le disque
   if (file.provider === 'local' || file.provider === 'Local') {
-    const localPath = path.join(strapi.dirs.static.public, file.url); // e.g. /uploads/image.jpg
+    const localPath = path.join(strapi.dirs.static.public, file.url);
     if (!fs.existsSync(localPath)) {
       throw new Error(`Fichier local introuvable : ${localPath}`);
     }
@@ -82,62 +85,39 @@ const updateMissingBlurhashes = async () => {
   console.log('✔️ Mise à jour des blurhash terminée.');
 };
 
-const setPermissionBlurhashes = async () => {
-  const superAdminRole = await strapi.admin.services.role.getSuperAdmin();
+const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
+  const config = strapi.config.get('plugin::blur-placeholder') as BlurhashConfig;
+  if (!config?.autoload) {
+    return;
+  } else {
+    console.log('✅ Blurhash autoload activé dans la config.');
+    strapi.db.lifecycles.subscribe({
+      models: ['plugin::upload.file'],
+      async afterCreate(event) {
+        const { result } = event;
+        console.log('🆕 Nouveau média importé:', result);
 
-  const actionUID = 'plugin::blur-placeholder.read';
+        if (result.mime.startsWith('image/')) {
+          try {
+            const blurhash = await getBlurhash(result);
+            console.log('🔹 Blurhash calculé:', blurhash);
 
-  const exists = await strapi.db.query('admin::permission').findOne({
-    where: {
-      action: actionUID,
-      role: superAdminRole.id,
-    },
-  });
+            await strapi.entityService.update('plugin::upload.file', result.id, {
+              data: { blurhash } as any,
+            });
 
-  if (!exists) {
-    await strapi.db.query('admin::permission').create({
-      data: {
-        action: actionUID,
-        role: superAdminRole.id,
-        enabled: true,
-        conditions: [],
-        properties: {},
-        actionParameters: {},
+            console.log('✅ Blurhash sauvegardé');
+          } catch (error) {
+            console.error('Erreur calcul blurhash:', error);
+          }
+        } else {
+          console.log('Le fichier importé n\'est pas une image, pas de blurhash calculé.');
+        }
       },
     });
+
+    await updateMissingBlurhashes();
   }
-
-}
-
-const bootstrap = async ({ strapi }: { strapi: Core.Strapi }) => {
-  strapi.db.lifecycles.subscribe({
-    models: ['plugin::upload.file'],
-    async afterCreate(event) {
-      const { result } = event;
-      console.log('🆕 Nouveau média importé:', result);
-
-      if (result.mime.startsWith('image/')) {
-        try {
-          const blurhash = await getBlurhash(result);
-          console.log('🔹 Blurhash calculé:', blurhash);
-
-          await strapi.entityService.update('plugin::upload.file', result.id, {
-            data: { blurhash } as any,
-          });
-
-          console.log('✅ Blurhash sauvegardé');
-        } catch (error) {
-          console.error('Erreur calcul blurhash:', error);
-        }
-      } else {
-        console.log('Le fichier importé n\'est pas une image, pas de blurhash calculé.');
-      }
-    },
-  });
-
-  await updateMissingBlurhashes();
-
-  await setPermissionBlurhashes()
 };
 
 export default bootstrap;
