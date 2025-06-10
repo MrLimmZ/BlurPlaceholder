@@ -21,7 +21,9 @@ import {
   NextLink,
   Checkbox,
   SingleSelect,
-  SingleSelectOption
+  SingleSelectOption,
+  Searchbar,
+  SearchForm
 } from '@strapi/design-system';
 import { useIntl } from 'react-intl';
 import { useFetchClient } from '@strapi/strapi/admin';
@@ -67,6 +69,7 @@ const HomePage = () => {
   const [selectedFiles, setSelectedFiles] = useState<number[]>([]);
   const allSelected = currentFiles.length > 0 && selectedFiles.length === currentFiles.length;
   const someSelected = selectedFiles.length > 0 && selectedFiles.length < currentFiles.length;
+  const [searchValue, setSearchValue] = React.useState('');
 
   // Action button
   const [isGenerating, setIsGenerating] = useState(false);
@@ -437,6 +440,14 @@ const HomePage = () => {
             </Button>
           </Flex>
         )}
+
+        <Box paddingBottom={4}>
+          <SearchForm>
+            <Searchbar name="searchbar" onClear={() => setSearchValue('')} value={searchValue} onChange={e => setSearchValue(e.target.value)} clearLabel="Nettoyer la recherche" placeholder="e.g: nom-du-media.png">
+              Recherchez un média
+            </Searchbar>
+          </SearchForm>
+        </Box>
 
         <Table colCount={5} rowCount={files.length}>
           <Thead>
